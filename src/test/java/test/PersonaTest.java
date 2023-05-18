@@ -8,35 +8,40 @@ public class PersonaTest extends BaseTest {
 
     @Test
     public void verificarCantidadFavoriteMealsLista() {
-        var persona = JsonReader.getPersona("persona");
+        final var persona = JsonReader.getPersona("persona");
         softAssert.assertEquals(persona.getFavoriteMeals().size(), 4);
+        softAssert.assertAll();
     }
 
     @Test
     public void verificarListaAmigos() {
-        var persona = JsonReader.getPersona("persona");
+        final var persona = JsonReader.getPersona("persona");
         softAssert.assertEquals(persona.getAmigos().size(), 3);
+        softAssert.assertAll();
     }
 
     @Test
     public void verificarAmigo() {
-        var persona = JsonReader.getPersona("persona");
+        final var persona = JsonReader.getPersona("persona");
         softAssert.assertEquals(persona.getAmigos().get(0).getName(), "Carlos");
         softAssert.assertEquals(persona.getAmigos().get(0).getProfession(), "Profesor");
         softAssert.assertEquals(persona.getAmigos().get(0).getWhereTheyMeet(), "Universidad");
+        softAssert.assertAll();
     }
 
     @Test
     public void verificarTrabajoLead() {
-        var persona = JsonReader.getPersona("persona");
+        final var persona = JsonReader.getPersona("persona");
         softAssert.assertEquals(persona.getTrabajosLista().get("lead").getDescription(), "trabajo como junior luego de practicante");
         softAssert.assertEquals(persona.getTrabajosLista().get("lead").getHoursPerDay(), 8);
         softAssert.assertEquals(persona.getTrabajosLista().get("lead").isActive(), false);
+        softAssert.assertAll();
     }
 
     @Test
     public void verificarPais() {
-        var persona = JsonReader.getPersona("persona");
+        final var persona = JsonReader.getPersona("persona");
         softAssert.assertEquals(persona.getCountry(), "Checoslovaquia");
+        softAssert.assertAll();
     }
 }

@@ -12,29 +12,23 @@ public class PokemonTest extends BaseTest {
 
     @Test
     public void verificarPokemon() {
-        var pokemonList = ExcelReader.getPokemonList();
-        Pokemon pokemonTest = null;
-        for (var pokemon : pokemonList) {
-            if (pokemon.getId() == 20) {
-                pokemonTest = pokemon;
-                break;
-            }
-        }
+        final var pokemonList = ExcelReader.getPokemonList();
 
-        softAssert.assertEquals(pokemonTest.getNombre(), "Raticate");
-        softAssert.assertEquals(pokemonTest.getNombreJapones(), "Ratta");
-        softAssert.assertEquals(pokemonTest.getAtk(), 97);
-        softAssert.assertEquals(pokemonTest.getDef(), 9);
-        softAssert.assertEquals(pokemonTest.getSpDef(), 4);
-        softAssert.assertEquals(pokemonTest.getCrit(), 81);
-        softAssert.assertEquals(pokemonTest.getPeso(), 7.28);
-        softAssert.assertEquals(pokemonTest.getAtrapado(), true);
-
+        softAssert.assertTrue(pokemonList.contains(pokemonList.get(89)));
+        softAssert.assertEquals(pokemonList.get(89).getNombre(), "Raticate");
+        softAssert.assertEquals(pokemonList.get(89).getNombreJapones(), "Ratta");
+        softAssert.assertEquals(pokemonList.get(89).getAtk(), 97);
+        softAssert.assertEquals(pokemonList.get(89).getDef(), 9);
+        softAssert.assertEquals(pokemonList.get(89).getSpDef(), 4);
+        softAssert.assertEquals(pokemonList.get(89).getCrit(), 81);
+        softAssert.assertEquals(pokemonList.get(89).getPeso(), 7.28);
+        softAssert.assertEquals(pokemonList.get(89).getAtrapado(), true);
+        softAssert.assertAll();
     }
 
     @Test
     public void ordenarBubbleSortPokemon() {
-        var pokemonList = ExcelReader.getPokemonList();
+        final var pokemonList = ExcelReader.getPokemonList();
 
         for (var j = 0; j < pokemonList.size() - 1; j++) {
             if (pokemonList.get(j).getAtk() < pokemonList.get(j + 1).getAtk()) {
@@ -45,11 +39,12 @@ public class PokemonTest extends BaseTest {
         }
 
         softAssert.assertEquals(pokemonList.get(0).getNombre(), "“Clefairy”");
+        softAssert.assertAll();
     }
 
     @Test
     public void ordenarBubbleSortAlfabeticamentePokemon() {
-        var pokemonList = ExcelReader.getPokemonList();
+        final var pokemonList = ExcelReader.getPokemonList();
 
         for (var j = 0; j < pokemonList.size(); j++) {
             for (var i = j + 1; i < pokemonList.size(); i++) {
@@ -65,11 +60,12 @@ public class PokemonTest extends BaseTest {
 
         softAssert.assertEquals(pokemonList.get(0).getNombre(), "Zubat");
         softAssert.assertEquals(pokemonList.get(150).getNombre(), "Abra");
+        softAssert.assertAll();
     }
 
     @Test
     public void verificarPokemonNoAtrapados() {
-        var pokemonList = ExcelReader.getPokemonList();
+        final var pokemonList = ExcelReader.getPokemonList();
         List<Pokemon> pokemonFinalList = new ArrayList<>();
         for (var pokemon : pokemonList) {
             if (!pokemon.getAtrapado()) {
@@ -77,5 +73,6 @@ public class PokemonTest extends BaseTest {
             }
         }
         softAssert.assertEquals(pokemonFinalList.size(), "80");
+        softAssert.assertAll();
     }
 }
