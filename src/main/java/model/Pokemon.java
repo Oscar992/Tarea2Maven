@@ -22,7 +22,7 @@ public class Pokemon {
     @ExcelCellName("CRIT")
     private int crit;
     @ExcelCellName("PESO")
-    private int peso;
+    private double peso;
     @ExcelCellName("ATRAPADO")
     private boolean atrapado;
 
@@ -58,7 +58,7 @@ public class Pokemon {
         return crit;
     }
 
-    public int getPeso() {
+    public double getPeso() {
         return peso;
     }
 
