@@ -1,8 +1,8 @@
 package test;
 
 import base.BaseTest;
+import data.DataGiver;
 import data.ExcelReader;
-import data.MapParser;
 import org.testng.annotations.Test;
 import utility.Sorts;
 
@@ -13,16 +13,17 @@ public class PokemonTest extends BaseTest {
     @Test
     public void verificarPokemon() {
         final var pokemonList = ExcelReader.getPokemonList();
-
-        softAssert.assertTrue(pokemonList.contains(MapParser.getPokemonMap().get(20)));
-        softAssert.assertEquals(MapParser.getPokemonMap().get(20).getNombre(), "Raticate");
-        softAssert.assertEquals(MapParser.getPokemonMap().get(20).getNombreJapones(), "Ratta");
-        softAssert.assertEquals(MapParser.getPokemonMap().get(20).getAtk(), 97);
-        softAssert.assertEquals(MapParser.getPokemonMap().get(20).getDef(), 9);
-        softAssert.assertEquals(MapParser.getPokemonMap().get(20).getSpDef(), 4);
-        softAssert.assertEquals(MapParser.getPokemonMap().get(20).getCrit(), 81);
-        softAssert.assertEquals(MapParser.getPokemonMap().get(20).getPeso(), 7.28);
-        softAssert.assertEquals(MapParser.getPokemonMap().get(20).getAtrapado(), true);
+        final var pokemon = DataGiver.getPokemon(20);
+        
+        softAssert.assertTrue(pokemonList.contains(pokemon));
+        softAssert.assertEquals(pokemon.getNombre(), "Raticate");
+        softAssert.assertEquals(pokemon.getNombreJapones(), "Ratta");
+        softAssert.assertEquals(pokemon.getAtk(), 97);
+        softAssert.assertEquals(pokemon.getDef(), 9);
+        softAssert.assertEquals(pokemon.getSpDef(), 4);
+        softAssert.assertEquals(pokemon.getCrit(), 81);
+        softAssert.assertEquals(pokemon.getPeso(), 7.28);
+        softAssert.assertEquals(pokemon.getAtrapado(), true);
         softAssert.assertAll();
     }
 
