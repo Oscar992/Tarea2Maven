@@ -23,17 +23,23 @@ public class PersonaTest extends BaseTest {
 
     @Test
     public void verificarAmigo() {
-        softAssert.assertEquals(persona.getAmigos().get(0).getName(), "Carlos");
-        softAssert.assertEquals(persona.getAmigos().get(0).getProfession(), "Profesor");
-        softAssert.assertEquals(persona.getAmigos().get(0).getWhereTheyMeet(), "Universidad");
+
+        final var primerAmigo = (persona.getAmigos().get(0));
+
+        softAssert.assertEquals(primerAmigo.getName(), "Carlos");
+        softAssert.assertEquals(primerAmigo.getProfession(), "Profesor");
+        softAssert.assertEquals(primerAmigo.getWhereTheyMeet(), "Universidad");
         softAssert.assertAll();
     }
 
     @Test
     public void verificarTrabajoLead() {
-        softAssert.assertEquals(persona.getTrabajosLista().get("lead").getDescription(), "trabajo como junior luego de practicante");
-        softAssert.assertEquals(persona.getTrabajosLista().get("lead").getHoursPerDay(), 8);
-        softAssert.assertEquals(persona.getTrabajosLista().get("lead").isActive(), false);
+
+        final var trabajo = (persona.getTrabajosLista().get("lead"));
+
+        softAssert.assertEquals(trabajo.getDescription(), "trabajo como junior luego de practicante");
+        softAssert.assertEquals(trabajo.getHoursPerDay(), 8);
+        softAssert.assertEquals(trabajo.isActive(), false);
         softAssert.assertAll();
     }
 
