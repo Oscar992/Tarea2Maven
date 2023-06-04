@@ -65,4 +65,27 @@ public class Pokemon {
     public boolean getAtrapado() {
         return atrapado;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{Nombre: ");
+        sb.append(nombre);
+        sb.append("Nombre en japones: ");
+        sb.append(nombreJapones);
+        sb.append("Ataque: ");
+        sb.append(atk);
+        sb.append("Defensa: ");
+        sb.append(def);
+        sb.append("Desfensa especial: ");
+        sb.append(spDef);
+        sb.append("Critico: ");
+        sb.append(crit);
+        sb.append("Peso: ");
+        sb.append(peso);
+        sb.append("Atrapado: ");
+        sb.append(atrapado + "} ");
+        return sb.toString();
+    }
+
 }
