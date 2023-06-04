@@ -3,6 +3,7 @@ package test.pokemon;
 import base.BaseTest;
 import data.DataGiver;
 import data.ExcelReader;
+import io.qameta.allure.Description;
 import model.Pokemon;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -19,6 +20,7 @@ public class PokemonTest extends BaseTest {
     }
 
     @Test(groups = {smoke, regression})
+    @Description("verificarPokemon")
     public void verificarPokemon() {
         final var pokemonList = ExcelReader.getPokemonList();
         final var pokemon = DataGiver.getPokemon(20);
@@ -57,6 +59,7 @@ public class PokemonTest extends BaseTest {
     }
 
     @Test(groups = {regression})
+    @Description("verificarPokemonNoAtrapados")
     public void verificarPokemonNoAtrapados() {
         final var pokemonList = ExcelReader.getPokemonList();
         final var pokemonFinalList = new ArrayList<>();
@@ -74,6 +77,7 @@ public class PokemonTest extends BaseTest {
             dataProvider = DataGiver.DP_POKEMON,
             dataProviderClass = DataGiver.class
     )
+    @Description("ejercicio1")
     public void ejercicio1(Pokemon pokemon) {
         Logs.info("%s", pokemon);
         var pass = false;
