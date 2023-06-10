@@ -1,0 +1,1 @@
+mvn clean test -DsuiteName=smoke allure:serve

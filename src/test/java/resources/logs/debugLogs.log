@@ -1,0 +1,8 @@
+18:01:52.479 INFO  Automation - onStart
+18:01:52.500 INFO  Automation - onStart
+18:01:52.684 INFO  Automation - SetUp
+18:01:52.687 INFO  Automation - onTestStart
+18:01:52.751 INFO  Automation - onTestSuccess
+18:01:52.752 INFO  Automation - tearDown
+18:01:52.776 INFO  Automation - onFinish
+18:01:52.779 INFO  Automation - onFinish
