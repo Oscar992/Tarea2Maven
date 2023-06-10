@@ -1,0 +1,55 @@
+{
+    "person": {
+        "name": "Anahi",
+        "lastname": "Rodriguez",
+        "weight": 52.11,
+        "numCertificates": 4,
+        "country": "Checoslovaquia",
+        "married": false,
+        "favoriteMeals": [
+            "Arroz con arroz",
+            "Barney con pollo",
+            "Semillas del hermitano",
+            "Carne con cebolla"
+        ],
+        "amigos": [
+            {
+                "name": "Carlos",
+                "profession": "Profesor",
+                "where_they_meet": "Universidad"
+            },
+            {
+                "name": "Alejandro",
+                "profession": "Constructor",
+                "where_they_meet": "Tienda"
+            },
+            {
+                "name": "Iris",
+                "profession": "Bombero",
+                "where_they_meet": "Cementerio"
+            }
+        ],
+        "trabajos": {
+            "secretaria": {
+                "description": "trabajo como secretaria una vez",
+                "hours_per_day": 8,
+                "active": false
+            },
+            "practicante": {
+                "description": "trabajo como practicante luego de la universdad",
+                "hours_per_day": 4,
+                "active": false
+            },
+            "junior": {
+                "description": "trabajo como junior luego de practicante",
+                "hours_per_day": 8,
+                "active": false
+            },
+            "lead": {
+                "description": "trabajo como lead luego de junior",
+                "hours_per_day": 12,
+                "active": true
+            }
+        }
+    }
+}
